@@ -4,9 +4,13 @@ import {Provider} from "react-redux"
 import { store } from "./system/store";
 function App() {
   return (
+    <div className="dark">
+
     <Provider store={store}>
   <RouterProvider router={router}/>
   </Provider>
+  </div>
+
   );
 }
 

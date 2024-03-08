@@ -28,6 +28,7 @@ export const userSlice = createSlice({
         token: "",
       };
     },
+   
   },
 });
 export const {logout} =userSlice.actions
