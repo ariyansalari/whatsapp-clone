@@ -5,9 +5,7 @@ import { PulseLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 
 export const RegisterFrom = () => {
-  const { handleSubmit, register, registerData, errors, watch } = useRegister();
-  console.log("values", watch());
-  console.log("errors", errors);
+  const { handleSubmit, register, registerData, errors } = useRegister();
   const { status } = useSelector((state) => state.user);
   return (
     <div className="h-screen w-full flex items-center justify-center overflow-hidden">
