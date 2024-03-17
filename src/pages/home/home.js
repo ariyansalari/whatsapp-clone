@@ -1,7 +1,11 @@
-import { useSelector } from "react-redux";
+import { SideBar } from "components";
 
 export const HomeScreen = () => {
-    const {user}=useSelector((state)=>state.user)
-  
-  return <div className="flex flex-col">hello baby i want to logout you</div>;
+  return (
+    <div className="min-h-screen dark:bg-dark_bg_1  flex items-center justify-center py-[19px] overflow-hidden">
+    <div className="container min-h-screen flex">
+      <SideBar/>
+    </div>
+    </div>
+  );
 };
