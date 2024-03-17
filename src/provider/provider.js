@@ -9,7 +9,7 @@ const { token } = user;
      const router = createBrowserRouter([
         {
           path: "/",
-          element: <HomeScreen />
+          element: token?<HomeScreen />:<Navigate to={'/login'}/>
         },
         {
           path: "login",
