@@ -18,8 +18,35 @@
     line-height: 21px;
     @apply text-dark_text_1
 }
-.textPrimary{
+.textSecondary{
     font-size: 14px;
     line-height: 19px;
     @apply text-dark_text_2
+}
+.input {
+    @apply w-full dark:bg-dark_bg_2 p-1.5 dark:text-dark_text_1 rounded-lg flex-1 outline-none
+}
+.convos{
+    height: calc(100vh - 220px);
+overflow-y:auto ;
+}
+/* animation */
+.rotateAnimation{
+    animation: rotate 0.3s forwards;
+
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(-90deg);
+    }
+}
+
+.scrollbar::-webkit-scrollbar{
+    width: 5px;
+}
+.scrollbar::-webkit-scrollbar-track{
+    background: transparent;
+}
+.scrollbar::-webkit-scrollbar-thumb{
+    background: #444e54;
 }
