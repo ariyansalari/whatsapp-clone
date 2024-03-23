@@ -1,8 +1,11 @@
 import { ChatIcon, CommunityIcon, DotsIcon, StoryIcon } from "assets"
+import { useState } from "react"
 import { useSelector } from "react-redux"
+import { MenuSideBar } from "./partials"
 
 export const HeaderSideBar = () => {
     const {user}=useSelector((state)=>state.user)
+    const [showMenu,setShowMenu]=useState(false)
   return (
     <div className="h-[50px] dark:bg-dark_bg_2 flex items-center justify-center p16">
 <div className="w-full flex items-center justify-between">
@@ -25,10 +28,11 @@ export const HeaderSideBar = () => {
         <ChatIcon  className='dark:fill-dark_svg_1'/>
     </button>
 </li>
-<li>
-    <button className="btn">
+<li className="relative" onClick={()=>setShowMenu(prev=>!prev)}>
+    <button className={`btn ${showMenu?"bg-dark_hover_1":""}`}>
         <DotsIcon  className='dark:fill-dark_svg_1'/>
     </button>
+    {showMenu?<MenuSideBar/>:null}
 </li>
     </ul>
 </div>
