@@ -1,8 +1,22 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { open_create_conversation } from "system";
 
 export const ConversationItem = ({ convo }) => {
+  const dispatch=useDispatch()
+  const {user}=useSelector((state)=>state.user)
+  const {token}=user
+  const values={
+    receiver_id:'',
+    token
+  }
+  const openConversation=()=>{
+dispatch(open_create_conversation(values))
+  }
   return (
-    <li className="list-none h-[32px] w-full dark:bg-dark_bg_1 hover:dark:bg-dark_bg_2 cursor-pointer dark:text-dark_text_1 ">
+    <li
+    onClick={()=>openConversation()}
+    className="list-none h-[32px] w-full dark:bg-dark_bg_1 hover:dark:bg-dark_bg_2 cursor-pointer dark:text-dark_text_1 ">
       <div className="relative w-full flex items-center justify-between py-[10px]">
         <div className="flex items-center gap-x-3">
           <div className="relative min-w-[50px] max-w-[50px] h-[50x] rounded-full overflow-hidden">

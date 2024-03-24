@@ -37,6 +37,7 @@ return data
     return rejectWithValue(error.response.data.error.message)
   }
 })
+
 export const userSlice = createSlice({
   name: "user",
   initialState,
